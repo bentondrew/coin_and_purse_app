@@ -1,0 +1,22 @@
+version: "3"
+services:
+  ledgerapi:
+    image: "coin_and_purse_ledger_api:0.1.0"
+    networks:
+      - appnet
+    depends_on:
+      - ledgerdb
+  ledgerdb:
+    image: "coin_and_purse_ledger_db:0.1.0"
+    networks:
+      - appnet
+  browserclient:
+    image: "coin_and_purse_browser_clent:0.1.0"
+    networks:
+      - appnet
+  gateway:
+    image: "coin_and_purse_gateway:0.1.0"
+    networks:
+      - appnet
+    ports:
+      - "80:8080"
