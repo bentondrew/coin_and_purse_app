@@ -1,4 +1,9 @@
-version: "3"
+version: "3.7"
+
+labels:
+  - "com.coinandpurse.version=0.1.0"
+  - "com.coinandpurse.description=Personal finances application"
+
 services:
   ledgerapi:
     image: "coin_and_purse_ledger_api:0.1.0"
@@ -20,3 +25,7 @@ services:
       - appnet
     ports:
       - "80:8080"
+
+networks:
+  appnet:
+    driver: bridge
