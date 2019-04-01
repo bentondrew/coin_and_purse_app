@@ -15,6 +15,9 @@ services:
     image: "coin_and_purse_ledger_db:0.1.0"
     networks:
       - appnet
+    environment:
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=superledger
   browserclient:
     image: "coin_and_purse_browser_clent:0.1.0"
     networks:
