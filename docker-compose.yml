@@ -1,0 +1,34 @@
+version: "3.7"
+
+# Coin and Purse App
+# Version: 0.1.0
+# Description: Personal Finances Application
+
+services:
+  ledgerapi:
+    image: "coin_and_purse_ledger_api:0.1.0"
+    networks:
+      - appnet
+    depends_on:
+      - ledgerdb
+  ledgerdb:
+    image: "coin_and_purse_ledger_db:0.1.0"
+    networks:
+      - appnet
+    environment:
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_USER=superledger
+  # browserclient:
+  #   image: "coin_and_purse_browser_clent:0.1.0"
+  #   networks:
+  #     - appnet
+  gateway:
+    image: "coin_and_purse_gateway:0.1.0"
+    networks:
+      - appnet
+    ports:
+      - "80:80"
+
+networks:
+  appnet:
+    driver: bridge
