@@ -1,8 +1,8 @@
 version: "3.7"
 
-labels:
-  - "com.coinandpurse.version=0.1.0"
-  - "com.coinandpurse.description=Personal finances application"
+# Coin and Purse App
+# Version: 0.1.0
+# Description: Personal Finances Application
 
 services:
   ledgerapi:
@@ -18,16 +18,16 @@ services:
     environment:
       - POSTGRES_PASSWORD=test
       - POSTGRES_USER=superledger
-  browserclient:
-    image: "coin_and_purse_browser_clent:0.1.0"
-    networks:
-      - appnet
+  # browserclient:
+  #   image: "coin_and_purse_browser_clent:0.1.0"
+  #   networks:
+  #     - appnet
   gateway:
     image: "coin_and_purse_gateway:0.1.0"
     networks:
       - appnet
     ports:
-      - "80:8080"
+      - "80:80"
 
 networks:
   appnet:
