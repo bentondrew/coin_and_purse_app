@@ -1,4 +1,7 @@
-# coin_and_purse_app
+# Coin & Purse App ![MoneyBag](./img/moneybag.png)
+
+## Overview
+
 This repo defines the coin and purse app level stuff.
 The app is structured as a set of services deployed in
 Docker containers. To run in a local environment, use
